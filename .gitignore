@@ -3,3 +3,6 @@
 node_modules
 package-lock.json
 .vscode
+.test18.js
+.test.js
+.test2,js

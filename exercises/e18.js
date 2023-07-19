@@ -3,10 +3,15 @@
  * Return the year with the greatest number of Asteroids discoveries
  * Return example: 1902
  */
+import { maxBy } from '../exercises/e17';
 
 export function getGreatestDiscoveryYear(data) {
-  // Your code goes here...
-  // feel free to import your `maxBy` or `minBy` methods from previous lessons
+ const mostPrevAsteroidDiscoveryYear = data.asteroids
+ .reduce ((acc, curr) => {
+   acc[curr.discoveryYear] = (acc[curr.discoveryYear] || 0) +1;  //still working on understanding using reduce with objects instead of numbers
+  return acc;
+ }, {})
+ return parseInt(maxBy(Object.entries(mostPrevAsteroidDiscoveryYear), element => element[1])[0]);
 }
 
 // === TEST YOURSELF ===

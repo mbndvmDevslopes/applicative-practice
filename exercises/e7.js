@@ -3,11 +3,16 @@ import { data } from "../data/data";
 // SPACE DATA EXERCISE 7
 // Return an array of all Planets names that have moons
 // Return example: ['name1', 'name2', ... , 'nameN']
-
-export function getPlanetsNamesWithMoons(data) {
-  // Your code goes here...
+export  function getPlanetsNamesWithMoons(data) {
+  const planetsWithMoons = data.planets
+    .filter((planet) => {
+      return planet.moonsCount >= 1;
+    })
+    .map((planet) => {
+      return planet.name;
+  })
+  return planetsWithMoons;
 }
-
 
 
 // === TEST YOURSELF ===

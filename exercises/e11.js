@@ -5,10 +5,19 @@ import { data } from "../data/data";
 // include planets with 0 moons
 // Return example: ['name1', 'name2', ... , 'nameN']
 
-export function lowMoonsPlanets(data) {
-  // Your code goes here...
-}
 
+export function lowMoonsPlanets(data) {
+ const lowMoonCountPlanets = data.planets
+  .filter((planet) => {
+    if( planet.moonsCount < 10 || !planet.moons) {
+      return planet.name;
+    };
+  })
+  .map((planet) => {
+    return planet.name;
+  });
+  return lowMoonCountPlanets;
+}
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"
 // If the test has all tests passed, switch to the next exercise file

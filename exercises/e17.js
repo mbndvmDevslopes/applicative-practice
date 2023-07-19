@@ -7,19 +7,37 @@
  * * minBy(): Return the element where the callback function on that element yields the lowest value
  * * maxBy(): Return the element where the callback function on that element yields the highest value
  */
+/* */
 
 export function minBy(array, cb) {
-  // Your code goes here...
-
+  
+  let min = array[0];
+  for (let item of array) {
+  
+    if(cb(item) < cb(min)) {
+      min = item;
+    }
+    
+  }
+  return min;
 }
 
 export function maxBy(array, cb) {
-  // Your code goes here...
-
+  let max = array[0];
+  for (let item of array) {
+    
+    if(cb(item) > cb(max)) {
+      max = item;
+    }
+  }
+  return max;
 }
 
+function cb(item) {
+  return item[0];
+}
 
-// === TEST YOURSELF ===
+// === TEST YOURSELF === */
 // Once you're finished run the test with "npm run test-17"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
