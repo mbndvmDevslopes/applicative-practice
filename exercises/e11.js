@@ -7,16 +7,13 @@ import { data } from "../data/data";
 
 
 export function lowMoonsPlanets(data) {
- const lowMoonCountPlanets = data.planets
+ return data.planets
   .filter((planet) => {
     if( planet.moonsCount < 10 || !planet.moons) {
       return planet.name;
     };
   })
-  .map((planet) => {
-    return planet.name;
-  });
-  return lowMoonCountPlanets;
+  .map((planet) =>  planet.name);
 }
 // === TEST YOURSELF ===
 // Once you're finished run the test with "npm run test-11"

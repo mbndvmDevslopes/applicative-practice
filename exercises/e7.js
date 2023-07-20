@@ -4,14 +4,9 @@ import { data } from "../data/data";
 // Return an array of all Planets names that have moons
 // Return example: ['name1', 'name2', ... , 'nameN']
 export  function getPlanetsNamesWithMoons(data) {
-  const planetsWithMoons = data.planets
-    .filter((planet) => {
-      return planet.moonsCount >= 1;
-    })
-    .map((planet) => {
-      return planet.name;
-  })
-  return planetsWithMoons;
+  return data.planets
+    .filter((planet) => planet.moonsCount >= 1)
+    .map((planet) => planet.name)
 }
 
 

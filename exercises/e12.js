@@ -5,7 +5,7 @@ import { data } from "../data/data";
 // Return example: 42
 
 export function allPlanetsMoonsCount(data) {
-  const moonCount = data.planets
+  return data.planets
   .filter((hasMoons) => {
     if(hasMoons.moons) {
       return hasMoons;
@@ -14,7 +14,7 @@ export function allPlanetsMoonsCount(data) {
   .reduce((total, planetMoonCount) => {
     return total + planetMoonCount.moonsCount
   }, 0)
-  return moonCount;
+  
 }
 
 

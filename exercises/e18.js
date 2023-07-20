@@ -8,7 +8,7 @@ import { maxBy } from '../exercises/e17';
 export function getGreatestDiscoveryYear(data) {
  const mostPrevAsteroidDiscoveryYear = data.asteroids
  .reduce ((acc, curr) => {
-   acc[curr.discoveryYear] = (acc[curr.discoveryYear] || 0) +1;  //still working on understanding using reduce with objects instead of numbers
+   acc[curr.discoveryYear] = (acc[curr.discoveryYear] || 0) +1;  
   return acc;
  }, {})
  return parseInt(maxBy(Object.entries(mostPrevAsteroidDiscoveryYear), element => element[1])[0]);
