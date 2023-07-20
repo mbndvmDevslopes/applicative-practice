@@ -6,15 +6,13 @@
 import { maxBy } from "../exercises/e17";
 
 export function getGreatestDiscoveryYear(data) {
-  const mostPrevAsteroidDiscoveryYear = data.asteroids.reduce((acc, curr) => {
-    acc[curr.discoveryYear] = (acc[curr.discoveryYear] || 0) + 1;
-    return acc;
-  }, {});
   return parseInt(
     maxBy(
-      Object.entries(mostPrevAsteroidDiscoveryYear),
-      (element) => element[1]
-    )[0]
+      Object.entries(
+        data.asteroids.reduce((acc, curr) => {
+          acc[curr.discoveryYear] = (acc[curr.discoveryYear] || 0) + 1;
+          return acc;
+        }, {})), (element) => element[1])[0]
   );
 }
 
@@ -22,3 +20,4 @@ export function getGreatestDiscoveryYear(data) {
 // Once you're finished run the test with "npm run test-18"
 // If the test has all tests passed, switch to the next exercise file
 // If any of the tests fails, refactor the code and run the test command after you've fixed the function
+
