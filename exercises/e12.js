@@ -4,7 +4,7 @@ import { data } from "../data/data";
 // Return the sum of all moons for all planets
 // Return example: 42
 
-export function allPlanetsMoonsCount(data) {
+/* export function allPlanetsMoonsCount(data) {
   return data.planets
   .filter((hasMoons) => {
     if(hasMoons.moons) {
@@ -15,8 +15,17 @@ export function allPlanetsMoonsCount(data) {
     return total + planetMoonCount.moonsCount
   }, 0)
   
-}
+} */
 
+export function allPlanetsMoonsCount(data) {
+  return data.planets
+  .reduce((acc, planet) =>  {
+  if(planet.moons) {
+      acc += planet.moons.length;
+    }
+    return acc
+  }, 0)
+}
 
 
 // === TEST YOURSELF ===
